@@ -51,8 +51,9 @@ client.connect(err => {
         const status = req.body.status;
         const houseName = req.body.houseName;
         const price = req.body.price;
+        const houseId = req.body.houseId;
         
-        bookingCollection.insertOne({ name, customerEmail, phone, message, ownerEmail, status, houseName, price })
+        bookingCollection.insertOne({ name, customerEmail, phone, message, ownerEmail, status, houseName, price, houseId })
             .then(result => {
                 res.send(result.insertedCount > 0);
             })
